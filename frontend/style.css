@@ -1,0 +1,59 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: rgb(255, 255, 255);
+    color: #2A2F6A;
+    width: 100%;
+    min-height: 100vh;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header {
+    width: 100%;
+    height: 4rem;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 3rem 1rem 3rem;
+    align-items: center;
+    font-weight: bold;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.home {
+    margin: 1rem 3rem;
+    width: 94%;
+    height: 85vh;
+    display: flex;
+    justify-content: space-between;
+    color: #2A2F6A;
+    font-size: 5vh;
+    font-weight: bold;
+    line-height: 5px;
+    align-items: center;
+
+}
+
+
+.abt-influencer {
+    padding: 2vh 8vh;
+    background-color: #E5B91D;
+    font-weight: 700;
+    font-size: medium;
+    border-radius: 8px;
+}
+
+.home-img {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 20px;
+}
