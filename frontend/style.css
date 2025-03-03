@@ -1,60 +1,137 @@
-body,
-html {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background: rgb(255, 255, 255);
+.container {
+    max-width: 1400px;
+    margin: 4rem auto;
+    padding: 2rem 5%;
+}
+
+.container h1 {
+    text-align: center;
+    margin-bottom: 3rem;
     color: #2A2F6A;
-    width: 100%;
-    min-height: 100vh;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 800;
+    font-size: clamp(2rem, 4vw, 2.5rem);
 }
 
-header {
-    width: 100%;
-    height: 4rem;
-}
-
-.nav {
-    display: flex;
-    justify-content: space-between;
-    padding: 1rem 3rem 1rem 3rem;
-    align-items: center;
-    font-weight: bold;
-}
-
-.nav-list {
-    display: flex;
-    list-style: none;
+/* Cards Container */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    margin-top: 1.5rem;
 }
 
-.home {
-    margin: 1rem 3rem;
-    width: 94%;
-    height: 85vh;
-    display: flex;
-    font-family: 'Courier New', Courier, monospace;
-    justify-content: space-between;
-    color: #2A2F6A;
-    font-size: 5vh;
-    font-weight: bold;
-    line-height: 5px;
-    align-items: center;
-
+/* Card Styles */
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(42, 47, 106, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-
-.abt-influencer {
-    padding: 2vh 8vh;
-    background-color: #E5B91D;
-    font-weight: 700;
-    font-size: medium;
-    border-radius: 8px;
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(42, 47, 106, 0.15);
 }
 
-.home-img {
-    max-width: 100%;
+.card-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
     height: 100%;
-    border-radius: 20px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.card:hover .card-image img {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 1.5rem;
+}
+
+.influencer-name {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #2A2F6A;
+    font-weight: 700;
+}
+
+.trip-dates {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.destination {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #E5B91D;
+    margin-bottom: 1rem;
+}
+
+.description {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background-color: #E5B91D;
+    color: #2A2F6A;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(229, 185, 29, 0.3);
+    background-color: #E5B91D;
+    color: #2A2F6A;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .container {
+        padding: 2rem 5%;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 2rem auto;
+    }
+
+    .cards-container {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1.5rem 5%;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .card-image {
+        height: 200px;
+    }
 }
