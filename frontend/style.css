@@ -34,6 +34,7 @@ header {
     width: 94%;
     height: 85vh;
     display: flex;
+    font-family: 'Courier New', Courier, monospace;
     justify-content: space-between;
     color: #2A2F6A;
     font-size: 5vh;
