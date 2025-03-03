@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Trip with Influencers - Travel with your favorite social media personalities">
+    <link rel="stylesheet" href="style.css">
     <title>Triplink - Travel With Influencers</title>
     <style>
         /* Global Styles */
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
-        body, html {
+
+        body,
+        html {
             font-family: 'Poppins', Georgia, 'Times New Roman', Times, serif;
             color: #2A2F6A;
             background-color: #f9f9ff;
@@ -21,7 +26,7 @@
             min-height: 100vh;
             overflow-x: hidden;
         }
-        
+
         /* Typography */
         h1 {
             font-size: clamp(2.5rem, 5vw, 3.5rem);
@@ -29,13 +34,13 @@
             line-height: 1.2;
             margin-bottom: 0.5rem;
         }
-        
+
         p {
             color: #555;
             line-height: 1.6;
             margin-bottom: 1.5rem;
         }
-        
+
         /* Header & Navigation */
         header {
             width: 100%;
@@ -45,7 +50,7 @@
             z-index: 1000;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
         }
-        
+
         .nav {
             display: flex;
             justify-content: space-between;
@@ -54,7 +59,7 @@
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         .logo {
             font-size: 1.8rem;
             font-weight: 800;
@@ -63,19 +68,19 @@
             display: flex;
             align-items: center;
         }
-        
+
         .logo-icon {
             margin-right: 6px;
             font-size: 1.2rem;
         }
-        
+
         .nav-list {
             display: flex;
             list-style: none;
             gap: 2.5rem;
             align-items: center;
         }
-        
+
         .nav-list li a {
             text-decoration: none;
             color: #2A2F6A;
@@ -84,11 +89,11 @@
             padding: 0.5rem 0;
             transition: color 0.3s;
         }
-        
+
         .nav-list li a:hover {
             color: #E5B91D;
         }
-        
+
         .nav-list li a::after {
             content: '';
             position: absolute;
@@ -99,11 +104,11 @@
             background-color: #E5B91D;
             transition: width 0.3s;
         }
-        
+
         .nav-list li a:hover::after {
             width: 100%;
         }
-        
+
         .social-links a {
             color: #2A2F6A;
             text-decoration: none;
@@ -112,11 +117,11 @@
             gap: 5px;
             transition: color 0.3s;
         }
-        
+
         .social-links a:hover {
             color: #E5B91D;
         }
-        
+
         /* Hero Section */
         .home {
             display: flex;
@@ -126,12 +131,13 @@
             max-width: 1400px;
             margin: 2rem auto;
             gap: 3rem;
+            height: 80vh;
         }
-        
+
         .hero-content {
             flex: 1;
         }
-        
+
         .tagline {
             color: #E5B91D;
             font-weight: 600;
@@ -139,13 +145,13 @@
             margin-bottom: 1rem;
             display: block;
         }
-        
+
         .hero-buttons {
             display: flex;
             gap: 1rem;
             margin-top: 2rem;
         }
-        
+
         .abt-influencer {
             padding: 1rem 2rem;
             background-color: #E5B91D;
@@ -160,12 +166,12 @@
             align-items: center;
             gap: 8px;
         }
-        
+
         .abt-influencer:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(229, 185, 29, 0.3);
         }
-        
+
         .see-destinations {
             padding: 1rem 2rem;
             background-color: transparent;
@@ -177,17 +183,17 @@
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s;
         }
-        
+
         .see-destinations:hover {
             background-color: #2A2F6A;
             color: white;
         }
-        
+
         .home-img-container {
             flex: 1;
             position: relative;
         }
-        
+
         .home-img {
             width: 100%;
             height: auto;
@@ -195,11 +201,11 @@
             box-shadow: 0 20px 40px rgba(42, 47, 106, 0.15);
             transition: transform 0.5s;
         }
-        
+
         .home-img:hover {
             transform: scale(1.02);
         }
-        
+
         .featured-badge {
             position: absolute;
             top: -15px;
@@ -211,19 +217,19 @@
             font-weight: bold;
             box-shadow: 0 5px 15px rgba(229, 185, 29, 0.3);
         }
-        
+
         /* Destinations Showcase */
         .destinations {
             padding: 4rem 5%;
             background-color: white;
             margin-top: 4rem;
         }
-        
+
         .section-heading {
             text-align: center;
             margin-bottom: 3rem;
         }
-        
+
         .destinations-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -231,7 +237,7 @@
             max-width: 1400px;
             margin: 0 auto;
         }
-        
+
         .destination-card {
             background-color: white;
             border-radius: 15px;
@@ -239,34 +245,34 @@
             box-shadow: 0 10px 30px rgba(42, 47, 106, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-        
+
         .destination-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 20px 40px rgba(42, 47, 106, 0.15);
         }
-        
+
         .destination-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
         }
-        
+
         .destination-info {
             padding: 1.5rem;
         }
-        
+
         .destination-info h3 {
             margin-bottom: 0.5rem;
             font-size: 1.3rem;
         }
-        
+
         .destination-meta {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-top: 1rem;
         }
-        
+
         .influencer-tag {
             display: flex;
             align-items: center;
@@ -276,13 +282,13 @@
             border-radius: 50px;
             font-size: 0.9rem;
         }
-        
+
         .price {
             font-weight: bold;
             color: #E5B91D;
             font-size: 1.2rem;
         }
-        
+
         /* Mobile Navigation */
         .mobile-menu-btn {
             display: none;
@@ -292,31 +298,32 @@
             color: #2A2F6A;
             cursor: pointer;
         }
-        
+
         /* Responsive Design */
         @media (max-width: 992px) {
             .nav {
                 padding: 1rem 5%;
             }
-            
+
             .home {
                 flex-direction: column;
                 padding-top: 1rem;
                 text-align: center;
             }
-            
+
             .hero-buttons {
                 justify-content: center;
             }
-            
-            .nav-menu, .social-links {
+
+            .nav-menu,
+            .social-links {
                 display: none;
             }
-            
+
             .mobile-menu-btn {
                 display: block;
             }
-            
+
             .mobile-nav {
                 position: fixed;
                 top: 0;
@@ -333,11 +340,11 @@
                 transform: translateX(100%);
                 transition: transform 0.3s;
             }
-            
+
             .mobile-nav.active {
                 transform: translateX(0);
             }
-            
+
             .close-menu {
                 position: absolute;
                 top: 2rem;
@@ -347,7 +354,7 @@
                 font-size: 1.5rem;
                 cursor: pointer;
             }
-            
+
             .mobile-nav-list {
                 list-style: none;
                 display: flex;
@@ -355,14 +362,14 @@
                 gap: 1.5rem;
                 text-align: center;
             }
-            
+
             .mobile-nav-list li a {
                 text-decoration: none;
                 color: #2A2F6A;
                 font-size: 1.3rem;
                 font-weight: 600;
             }
-            
+
             .mobile-social-links {
                 display: flex;
                 gap: 1.5rem;
@@ -378,56 +385,133 @@
             <a href="#" class="logo">
                 <span class="logo-icon">✈️</span>Triplink
             </a>
-            
+
             <ul class="nav-list nav-menu">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">About Us</a></li>
                 <li><a href="#">Pricing</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
-            
+
             <ul class="nav-list social-links">
                 <li><a href="#"><span></span> Instagram</a></li>
                 <li><a href="#"><span></span> Twitter</a></li>
             </ul>
-            
+
             <button class="mobile-menu-btn">☰</button>
         </nav>
     </header>
-    
+
     <!-- Mobile Navigation -->
 
-    
+
     <section class="home">
         <div class="hero-content">
             <span class="tagline">Experience Travel Like Never Before</span>
             <h1>Travel With</h1>
             <h1>Your Favourite</h1>
             <h1>Influencers</h1>
-            
-            <p>Join exclusive trips led by top social media personalities. Explore breathtaking destinations, create amazing content, and make memories that last a lifetime.</p>
-            
+
+            <p>Join exclusive trips led by top social media personalities. Explore breathtaking destinations, create
+                amazing content, and make memories that last a lifetime.</p>
+
             <div class="hero-buttons">
                 <button class="abt-influencer">👤 About Influencers</button>
                 <button class="see-destinations">View Destinations</button>
             </div>
         </div>
-        
+
         <div class="home-img-container">
-            <img src="samay-rainas-show-indias-got-latent_202502870202.png" alt="Travel with influencers" class="home-img">
+            <img src="samay-rainas-show-indias-got-latent_202502870202.png" alt="Travel with influencers"
+                class="home-img">
             <div class="featured-badge">Featured Trip</div>
         </div>
     </section>
-    
+
+    <div class="container" id="upcoming-trips">
+        <h1>Upcoming Trips </h1>
+
+        <div class="cards-container">
+            <!-- Card 1 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://plus.unsplash.com/premium_photo-1683910767532-3a25b821f7ae?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+                        alt="Emma Rodriguez">
+                </div>
+                <div class="card-content">
+                    <h2 class="influencer-name">Emma Rodriguez</h2>
+                    <p class="trip-dates">April 15-25, 2025</p>
+                    <p class="destination">Bali, Indonesia</p>
+                    <p class="description">Join Emma on a 10-day wellness retreat in the heart of Bali.
+                        Explore lush rice terraces, ancient temples, and pristine beaches while practicing
+                        yoga and mindfulness techniques.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1530076886461-ce58ea8abe24?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+                        alt="Jason Chen">
+                </div>
+                <div class="card-content">
+                    <h2 class="influencer-name">Jason Chen</h2>
+                    <p class="trip-dates">May 10-18, 2025</p>
+                    <p class="destination">Kyoto, Japan</p>
+                    <p class="description">Experience the beauty of Japan's ancient capital with
+                        photographer Jason Chen. Capture stunning shots of cherry blossoms, historic
+                        temples, and traditional Japanese culture.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://images.unsplash.com/photo-1526779259212-939e64788e3c?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
+                        alt="Sophia Williams">
+                </div>
+                <div class="card-content">
+                    <h2 class="influencer-name">Sophia Williams</h2>
+                    <p class="trip-dates">June 5-15, 2025</p>
+                    <p class="destination">Santorini, Greece</p>
+                    <p class="description">Discover the breathtaking views of Santorini with travel
+                        vlogger Sophia. Explore white-washed buildings, blue domes, and stunning sunsets
+                        over the Aegean Sea.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <div class="card-image">
+                    <img src="https://plus.unsplash.com/premium_photo-1661889099855-b44dc39e88c9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGZyZWUlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D"
+                        alt="Marcus Johnson">
+                </div>
+                <div class="card-content">
+                    <h2 class="influencer-name">Marcus Johnson</h2>
+                    <p class="trip-dates">July 20-30, 2025</p>
+                    <p class="destination">Machu Picchu, Peru</p>
+                    <p class="description">Embark on an adventure to the ancient Incan citadel with
+                        hiking enthusiast Marcus. Trek the Inca Trail and experience the magic of one of
+                        the world's most famous archaeological sites.</p>
+                    <a href="#" class="btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <section class="destinations">
         <div class="section-heading">
             <h2>Popular Destinations</h2>
             <p>Explore our most sought-after trips with top influencers</p>
         </div>
-        
+
         <div class="destinations-grid">
             <div class="destination-card">
-                <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aXRhbHl8ZW58MHx8MHx8fDA%3D" alt="Italy" class="destination-img">
+                <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aXRhbHl8ZW58MHx8MHx8fDA%3D"
+                    alt="Italy" class="destination-img">
                 <div class="destination-info">
                     <h3>Amalfi Coast, Italy</h3>
                     <p>Explore the stunning coastline and picturesque villages of Italy's premier destination.</p>
@@ -437,9 +521,10 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="destination-card">
-                <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGhhaWxhbmR8ZW58MHx8MHx8fDA%3D" alt="Thailand" class="destination-img">
+                <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGhhaWxhbmR8ZW58MHx8MHx8fDA%3D"
+                    alt="Thailand" class="destination-img">
                 <div class="destination-info">
                     <h3>Bangkok & Phuket, Thailand</h3>
                     <p>Experience the vibrant city life and relax on pristine beaches in Thailand.</p>
@@ -449,7 +534,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="destination-card">
                 <img src="BALI.jpg" alt="Bali" class="destination-img">
                 <div class="destination-info">
@@ -463,22 +548,529 @@
             </div>
         </div>
     </section>
-    
+    <section class="why-triplink">
+        <div class="why-triplink-container">
+            <div class="section-heading">
+                <h2>Why Triplink?</h2>
+                <p>Experience the difference of traveling with your favorite content creators</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <span>🌟</span>
+                    </div>
+                    <h3>Exclusive Access</h3>
+                    <p>Get behind-the-scenes experiences and special events that aren't available to regular tourists.
+                        Our influencers open doors to unique opportunities.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <span>📸</span>
+                    </div>
+                    <h3>Content Creation</h3>
+                    <p>Learn photography and content creation tips directly from successful creators. Return with
+                        stunning photos and videos to enhance your own social presence.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <span>👥</span>
+                    </div>
+                    <h3>Like-minded Community</h3>
+                    <p>Connect with fellow travelers who share your interests and passions. Build lasting friendships
+                        with people from around the world.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <span>🛡️</span>
+                    </div>
+                    <h3>Trusted Experiences</h3>
+                    <p>All our trips are personally curated and tested by our influencers. Enjoy peace of mind knowing
+                        every detail has been carefully considered.</p>
+                </div>
+            </div>
+
+            <section class="testimonial-slider-section">
+                <div class="section-heading">
+                    <h2>Happy Travelers</h2>
+                    <p>Hear what our community has to say about their influencer-led adventures</p>
+                </div>
+
+                <div class="testimonial-slider-container">
+                    <div class="testimonial-slider">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-image">
+                                    <img src="https://images.unsplash.com/photo-1505968409348-bd000797c92e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZyZWUlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D"
+                                        alt="Sarah Johnson">
+                                </div>
+                                <div class="testimonial-content">
+                                    <div class="quote-icon">❝</div>
+                                    <p class="testimonial-text">Traveling with my favorite travel vlogger was a dream
+                                        come true! Not only did I see amazing places, but I learned so much about
+                                        photography and made friends I'll keep for life.</p>
+                                    <div class="testimonial-author">
+                                        <p class="author-name">Sarah Johnson</p>
+                                        <p class="trip-info">Bali Trip with @yogilife</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-image">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBvcnRyYWl0JTIwbWFufGVufDB8fDB8fHww"
+                                        alt="Michael Patel">
+                                </div>
+                                <div class="testimonial-content">
+                                    <div class="quote-icon">❝</div>
+                                    <p class="testimonial-text">The Santorini trip exceeded all my expectations! Sophia
+                                        showed us hidden spots that only locals know about, and the group dynamics made
+                                        everything even more special.</p>
+                                    <div class="testimonial-author">
+                                        <p class="author-name">Michael Patel</p>
+                                        <p class="trip-info">Greece Trip with @sophiatravels</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-image">
+                                    <img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBvcnRyYWl0JTIwd29tYW58ZW58MHx8MHx8fDA%3D"
+                                        alt="Elena Gomez">
+                                </div>
+                                <div class="testimonial-content">
+                                    <div class="quote-icon">❝</div>
+                                    <p class="testimonial-text">As a photography enthusiast, traveling with Jason was an
+                                        incredible learning experience. He taught us techniques that transformed my
+                                        Instagram feed. Worth every penny!</p>
+                                    <div class="testimonial-author">
+                                        <p class="author-name">Elena Gomez</p>
+                                        <p class="trip-info">Japan Trip with @jasonchen</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-image">
+                                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXQlMjBtYW58ZW58MHx8MHx8fDA%3D"
+                                        alt="Thomas Wright">
+                                </div>
+                                <div class="testimonial-content">
+                                    <div class="quote-icon">❝</div>
+                                    <p class="testimonial-text">The Peru trek with Marcus was challenging but incredibly
+                                        rewarding. His positivity kept us motivated, and the views at Machu Picchu were
+                                        absolutely breathtaking.</p>
+                                    <div class="testimonial-author">
+                                        <p class="author-name">Thomas Wright</p>
+                                        <p class="trip-info">Peru Trip with @marcusadventures</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider-controls">
+                        <button class="prev-btn">❮</button>
+                        <div class="slider-dots"></div>
+                        <button class="next-btn">❯</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <section class="pricing">
+        <div class="pricing-container">
+            <div class="section-heading">
+                <h2>Membership Plans</h2>
+                <p>Choose the perfect plan for your influencer travel experience</p>
+            </div>
+
+            <div class="pricing-toggle">
+                <span class="pricing-period active">Monthly</span>
+                <label class="switch">
+                    <input type="checkbox" id="pricing-toggle">
+                    <span class="slider round"></span>
+                </label>
+                <span class="pricing-period">Annual <span class="save-badge">Save 20%</span></span>
+            </div>
+
+            <div class="pricing-cards">
+                <!-- Basic Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <h3>Explorer</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount monthly">49</span>
+                            <span class="amount annual">39</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p class="pricing-description">Perfect for occasional travelers</p>
+                    </div>
+                    <div class="pricing-card-body">
+                        <ul class="features-list">
+                            <li><span class="feature-icon">✓</span> Access to select influencer trips</li>
+                            <li><span class="feature-icon">✓</span> Basic photography workshops</li>
+                            <li><span class="feature-icon">✓</span> 5% discount on all bookings</li>
+                            <li><span class="feature-icon">✓</span> Community forum access</li>
+                            <li><span class="feature-icon">✓</span> Monthly newsletter</li>
+                            <li class="unavailable"><span class="feature-icon">✕</span> Priority booking</li>
+                            <li class="unavailable"><span class="feature-icon">✕</span> One-on-one sessions with
+                                influencers</li>
+                            <li class="unavailable"><span class="feature-icon">✕</span> Exclusive events access</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card-footer">
+                        <a href="#" class="btn pricing-btn">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Standard Plan -->
+                <div class="pricing-card featured">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="pricing-card-header">
+                        <h3>Adventurer</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount monthly">99</span>
+                            <span class="amount annual">79</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p class="pricing-description">Ideal for regular travel enthusiasts</p>
+                    </div>
+                    <div class="pricing-card-body">
+                        <ul class="features-list">
+                            <li><span class="feature-icon">✓</span> Access to all influencer trips</li>
+                            <li><span class="feature-icon">✓</span> Advanced content creation workshops</li>
+                            <li><span class="feature-icon">✓</span> 10% discount on all bookings</li>
+                            <li><span class="feature-icon">✓</span> Community forum access</li>
+                            <li><span class="feature-icon">✓</span> Premium newsletter</li>
+                            <li><span class="feature-icon">✓</span> Priority booking</li>
+                            <li class="unavailable"><span class="feature-icon">✕</span> One-on-one sessions with
+                                influencers</li>
+                            <li class="unavailable"><span class="feature-icon">✕</span> Exclusive events access</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card-footer">
+                        <a href="#" class="btn pricing-btn featured-btn">Get Started</a>
+                    </div>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="pricing-card">
+                    <div class="pricing-card-header">
+                        <h3>Influencer</h3>
+                        <div class="price">
+                            <span class="currency">$</span>
+                            <span class="amount monthly">199</span>
+                            <span class="amount annual">159</span>
+                            <span class="period">/month</span>
+                        </div>
+                        <p class="pricing-description">For serious content creators</p>
+                    </div>
+                    <div class="pricing-card-body">
+                        <ul class="features-list">
+                            <li><span class="feature-icon">✓</span> Early access to all trips</li>
+                            <li><span class="feature-icon">✓</span> Professional content creation masterclass</li>
+                            <li><span class="feature-icon">✓</span> 15% discount on all bookings</li>
+                            <li><span class="feature-icon">✓</span> Private community access</li>
+                            <li><span class="feature-icon">✓</span> Exclusive newsletter</li>
+                            <li><span class="feature-icon">✓</span> Priority booking with guaranteed spots</li>
+                            <li><span class="feature-icon">✓</span> Two one-on-one sessions with influencers</li>
+                            <li><span class="feature-icon">✓</span> VIP access to exclusive events</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-card-footer">
+                        <a href="#" class="btn pricing-btn">Get Started</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pricing-faq">
+                <h3>Frequently Asked Questions</h3>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>How do the memberships work?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Our membership plans give you access to book trips with influencers, along with varying
+                                levels of discounts and exclusive benefits. The membership fee is separate from the
+                                actual trip costs.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Can I cancel my membership anytime?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, you can cancel your membership at any time. Monthly memberships can be canceled
+                                before the next billing cycle. Annual memberships are non-refundable but will remain
+                                active until the end of the term.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>Are trip costs included in the membership?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No, the membership gives you access to book trips and provides discounts on the trip
+                                costs. The actual trip prices are separate and vary based on destination, duration, and
+                                included amenities.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h4>What happens if an influencer cancels a trip?</h4>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>In the rare event that an influencer needs to cancel a trip, we offer you the option to
+                                join another similar trip, reschedule for a later date, or receive a full refund for
+                                your trip payment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="lucky-followers-container">
+        <div class="section-header">
+            <h2 class="section-title">Lucky Followers</h2>
+            <p class="section-subtitle">These amazing fans will be joining our next adventure!</p>
+        </div>
+
+        <div class="followers-grid">
+            <!-- Follower Card Template -->
+            <div class="follower-card">
+                <div class="follower-avatar">
+                    <img src="/api/placeholder/80/80" alt="Alex Johnson" />
+                    <span class="verification-badge">✓</span>
+                </div>
+                <div class="follower-info">
+                    <h3 class="follower-name">Alex Johnson</h3>
+                    <p class="follower-username">@alex_travels</p>
+                    <p class="follower-bio">Adventure seeker | Photography lover</p>
+                </div>
+                <div class="follower-stats">
+                    <span class="stat-item"><i class="icon-heart"></i> 5.2K</span>
+                    <span class="stat-item"><i class="icon-comment"></i> 423</span>
+                </div>
+            </div>
+
+            <!-- Additional Follower Cards -->
+            <div class="follower-card">
+                <div class="follower-avatar">
+                    <img src="/api/placeholder/80/80" alt="Maya Rodriguez" />
+                </div>
+                <div class="follower-info">
+                    <h3 class="follower-name">Maya Rodriguez</h3>
+                    <p class="follower-username">@maya.explore</p>
+                    <p class="follower-bio">Travel blogger | Food enthusiast</p>
+                </div>
+                <div class="follower-stats">
+                    <span class="stat-item"><i class="icon-heart"></i> 3.8K</span>
+                    <span class="stat-item"><i class="icon-comment"></i> 297</span>
+                </div>
+            </div>
+
+            <div class="follower-card">
+                <div class="follower-avatar">
+                    <img src="/api/placeholder/80/80" alt="Sam Chen" />
+                    <span class="verification-badge">✓</span>
+                </div>
+                <div class="follower-info">
+                    <h3 class="follower-name">Sam Chen</h3>
+                    <p class="follower-username">@samchenphoto</p>
+                    <p class="follower-bio">Photographer | Designer | Coffee addict</p>
+                </div>
+                <div class="follower-stats">
+                    <span class="stat-item"><i class="icon-heart"></i> 7.4K</span>
+                    <span class="stat-item"><i class="icon-comment"></i> 612</span>
+                </div>
+            </div>
+
+            <div class="follower-card highlighted">
+                <div class="follower-avatar">
+                    <img src="/api/placeholder/80/80" alt="Priya Patel" />
+                </div>
+                <div class="follower-info">
+                    <h3 class="follower-name">Priya Patel</h3>
+                    <p class="follower-username">@priya_creates</p>
+                    <p class="follower-bio">Content creator | Yoga instructor</p>
+                </div>
+                <div class="follower-stats">
+                    <span class="stat-item"><i class="icon-heart"></i> 4.3K</span>
+                    <span class="stat-item"><i class="icon-comment"></i> 378</span>
+                </div>
+                <div class="winner-badge">Grand Prize Winner!</div>
+            </div>
+        </div>
+
+        <div class="section-footer">
+            <p class="footer-text">Selected on March 1, 2025</p>
+            <button class="action-button">Join Next Giveaway</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <!-- Logo and About -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <h2>Influencer<span>Brand</span></h2>
+                    </div>
+                    <p class="footer-tagline">Inspiring adventures around the globe</p>
+                    <p class="footer-description">Join me on a journey through breathtaking destinations, unique
+                        experiences, and unforgettable moments.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Me</a></li>
+                        <li><a href="#">Travel Guide</a></li>
+                        <li><a href="#">Shop</a></li>
+                        <li><a href="#">Giveaways</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="footer-contact">
+                    <h3>Contact Us</h3>
+                    <div class="contact-item">
+                        <i class="icon-email"></i>
+                        <p>hello@influencerbrand.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="icon-phone"></i>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="icon-location"></i>
+                        <p>Los Angeles, CA, USA</p>
+                    </div>
+                    <div class="contact-button">
+                        <a href="#" class="contact-us-btn">Send Message</a>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-newsletter">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to my newsletter for travel tips and exclusive offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Social Media Bar -->
+            <div class="social-bar">
+                <div class="social-links">
+                    <a href="https://instagram.com/influencerbrand" class="social-link instagram"
+                        aria-label="Instagram">
+                        <i class="icon-instagram"></i>
+                        <span>@influencerbrand</span>
+                    </a>
+                    <a href="https://twitter.com/influencerbrand" class="social-link twitter" aria-label="Twitter">
+                        <i class="icon-twitter"></i>
+                        <span>@influencerbrand</span>
+                    </a>
+                    <a href="https://tiktok.com/@influencerbrand" class="social-link tiktok" aria-label="TikTok">
+                        <i class="icon-tiktok"></i>
+                        <span>@influencerbrand</span>
+                    </a>
+                    <a href="https://youtube.com/c/influencerbrand" class="social-link youtube" aria-label="YouTube">
+                        <i class="icon-youtube"></i>
+                        <span>InfluencerBrand</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2025 InfluencerBrand. All rights reserved.</p>
+                </div>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    // Mobile menu functionality
+
     <script>
-        // Mobile menu functionality
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const closeMenuBtn = document.querySelector('.close-menu');
-        const mobileNav = document.querySelector('.mobile-nav');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileNav.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-        
-        closeMenuBtn.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-            document.body.style.overflow = 'auto';
+        // Toggle between monthly and annual pricing
+        document.addEventListener('DOMContentLoaded', function () {
+            const pricingToggle = document.getElementById('pricing-toggle');
+            const monthlyAmounts = document.querySelectorAll('.amount.monthly');
+            const annualAmounts = document.querySelectorAll('.amount.annual');
+            const pricingPeriods = document.querySelectorAll('.pricing-period');
+
+            pricingToggle.addEventListener('change', function () {
+                if (this.checked) {
+                    // Show annual pricing
+                    monthlyAmounts.forEach(el => el.style.display = 'none');
+                    annualAmounts.forEach(el => el.style.display = 'inline');
+                    pricingPeriods[0].classList.remove('active');
+                    pricingPeriods[1].classList.add('active');
+                } else {
+                    // Show monthly pricing
+                    monthlyAmounts.forEach(el => el.style.display = 'inline');
+                    annualAmounts.forEach(el => el.style.display = 'none');
+                    pricingPeriods[0].classList.add('active');
+                    pricingPeriods[1].classList.remove('active');
+                }
+            });
+
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+
+                question.addEventListener('click', () => {
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
         });
     </script>
 </body>
+
 </html>
