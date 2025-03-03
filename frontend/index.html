@@ -1,48 +1,484 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Trip with Influencers">
-
-    <link rel="stylesheet" href="style.css">
-    <title>Triplink </title>
+    <meta name="description" content="Trip with Influencers - Travel with your favorite social media personalities">
+    <title>Triplink - Travel With Influencers</title>
+    <style>
+        /* Global Styles */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body, html {
+            font-family: 'Poppins', Georgia, 'Times New Roman', Times, serif;
+            color: #2A2F6A;
+            background-color: #f9f9ff;
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+        
+        p {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Header & Navigation */
+        header {
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #2A2F6A;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            margin-right: 6px;
+            font-size: 1.2rem;
+        }
+        
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .nav-list li a {
+            text-decoration: none;
+            color: #2A2F6A;
+            font-weight: 600;
+            position: relative;
+            padding: 0.5rem 0;
+            transition: color 0.3s;
+        }
+        
+        .nav-list li a:hover {
+            color: #E5B91D;
+        }
+        
+        .nav-list li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #E5B91D;
+            transition: width 0.3s;
+        }
+        
+        .nav-list li a:hover::after {
+            width: 100%;
+        }
+        
+        .social-links a {
+            color: #2A2F6A;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #E5B91D;
+        }
+        
+        /* Hero Section */
+        .home {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 5%;
+            max-width: 1400px;
+            margin: 2rem auto;
+            gap: 3rem;
+        }
+        
+        .hero-content {
+            flex: 1;
+        }
+        
+        .tagline {
+            color: #E5B91D;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .abt-influencer {
+            padding: 1rem 2rem;
+            background-color: #E5B91D;
+            color: #2A2F6A;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 50px;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .abt-influencer:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(229, 185, 29, 0.3);
+        }
+        
+        .see-destinations {
+            padding: 1rem 2rem;
+            background-color: transparent;
+            color: #2A2F6A;
+            font-weight: 700;
+            font-size: 1rem;
+            border-radius: 50px;
+            border: 2px solid #2A2F6A;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        .see-destinations:hover {
+            background-color: #2A2F6A;
+            color: white;
+        }
+        
+        .home-img-container {
+            flex: 1;
+            position: relative;
+        }
+        
+        .home-img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(42, 47, 106, 0.15);
+            transition: transform 0.5s;
+        }
+        
+        .home-img:hover {
+            transform: scale(1.02);
+        }
+        
+        .featured-badge {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            background-color: #E5B91D;
+            color: #2A2F6A;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(229, 185, 29, 0.3);
+        }
+        
+        /* Destinations Showcase */
+        .destinations {
+            padding: 4rem 5%;
+            background-color: white;
+            margin-top: 4rem;
+        }
+        
+        .section-heading {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .destination-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(42, 47, 106, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .destination-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(42, 47, 106, 0.15);
+        }
+        
+        .destination-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .destination-info {
+            padding: 1.5rem;
+        }
+        
+        .destination-info h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .destination-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+        
+        .influencer-tag {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #f0f1ff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: #E5B91D;
+            font-size: 1.2rem;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #2A2F6A;
+            cursor: pointer;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .nav {
+                padding: 1rem 5%;
+            }
+            
+            .home {
+                flex-direction: column;
+                padding-top: 1rem;
+                text-align: center;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .nav-menu, .social-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mobile-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: white;
+                z-index: 2000;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transform: translateX(100%);
+                transition: transform 0.3s;
+            }
+            
+            .mobile-nav.active {
+                transform: translateX(0);
+            }
+            
+            .close-menu {
+                position: absolute;
+                top: 2rem;
+                right: 2rem;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+            }
+            
+            .mobile-nav-list {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+            
+            .mobile-nav-list li a {
+                text-decoration: none;
+                color: #2A2F6A;
+                font-size: 1.3rem;
+                font-weight: 600;
+            }
+            
+            .mobile-social-links {
+                display: flex;
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <header class="header">
         <nav class="nav">
-            <div>triplink</div>
-            <ul class="nav-list">
-                <li>Home</li>
-                <li>About Us</li>
-                <li>Pricing</li>
-                <li>Contact Us</li>
+            <a href="#" class="logo">
+                <span class="logo-icon">✈️</span>Triplink
+            </a>
+            
+            <ul class="nav-list nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact Us</a></li>
             </ul>
-            <ul class="nav-list">
-                <li>Instagram</li>
-                <li>Twitter</li>
+            
+            <ul class="nav-list social-links">
+                <li><a href="#"><span></span> Instagram</a></li>
+                <li><a href="#"><span></span> Twitter</a></li>
             </ul>
+            
+            <button class="mobile-menu-btn">☰</button>
         </nav>
-
     </header>
+    
+    <!-- Mobile Navigation -->
 
+    
     <section class="home">
-
-        <div>
+        <div class="hero-content">
+            <span class="tagline">Experience Travel Like Never Before</span>
             <h1>Travel With</h1>
             <h1>Your Favourite</h1>
             <h1>Influencers</h1>
-
-            <button class="abt-influencer">About Influencer </button>
-
+            
+            <p>Join exclusive trips led by top social media personalities. Explore breathtaking destinations, create amazing content, and make memories that last a lifetime.</p>
+            
+            <div class="hero-buttons">
+                <button class="abt-influencer">👤 About Influencers</button>
+                <button class="see-destinations">View Destinations</button>
+            </div>
         </div>
-
-        <img src="https://images.unsplash.com/photo-1505968409348-bd000797c92e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZyZWUlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D"
-            alt="" class="home-img">
-
+        
+        <div class="home-img-container">
+            <img src="samay-rainas-show-indias-got-latent_202502870202.png" alt="Travel with influencers" class="home-img">
+            <div class="featured-badge">Featured Trip</div>
+        </div>
     </section>
+    
+    <section class="destinations">
+        <div class="section-heading">
+            <h2>Popular Destinations</h2>
+            <p>Explore our most sought-after trips with top influencers</p>
+        </div>
+        
+        <div class="destinations-grid">
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aXRhbHl8ZW58MHx8MHx8fDA%3D" alt="Italy" class="destination-img">
+                <div class="destination-info">
+                    <h3>Amalfi Coast, Italy</h3>
+                    <p>Explore the stunning coastline and picturesque villages of Italy's premier destination.</p>
+                    <div class="destination-meta">
+                        <span class="influencer-tag">📷 With @travelkate</span>
+                        <span class="price">$1,299</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="destination-card">
+                <img src="https://images.unsplash.com/photo-1528181304800-259b08848526?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGhhaWxhbmR8ZW58MHx8MHx8fDA%3D" alt="Thailand" class="destination-img">
+                <div class="destination-info">
+                    <h3>Bangkok & Phuket, Thailand</h3>
+                    <p>Experience the vibrant city life and relax on pristine beaches in Thailand.</p>
+                    <div class="destination-meta">
+                        <span class="influencer-tag">📷 With @asianadventures</span>
+                        <span class="price">$1,099</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="destination-card">
+                <img src="BALI.jpg" alt="Bali" class="destination-img">
+                <div class="destination-info">
+                    <h3>Bali, Indonesia</h3>
+                    <p>Discover the perfect balance of culture, relaxation, and adventure in beautiful Bali.</p>
+                    <div class="destination-meta">
+                        <span class="influencer-tag">📷 With @yogilife</span>
+                        <span class="price">$1,499</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const closeMenuBtn = document.querySelector('.close-menu');
+        const mobileNav = document.querySelector('.mobile-nav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        
+        closeMenuBtn.addEventListener('click', () => {
+            mobileNav.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+    </script>
 </body>
-
 </html>
