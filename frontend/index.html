@@ -428,7 +428,7 @@
         </div>
     </section>
 
-    <div class="container">
+    <div class="container" id="upcoming-trips">
         <h1>Upcoming Trips </h1>
 
         <div class="cards-container">
@@ -548,23 +548,153 @@
             </div>
         </div>
     </section>
+    <section class="why-triplink">
+        <div class="why-triplink-container">
+            <div class="section-heading">
+                <h2>Why Triplink?</h2>
+                <p>Experience the difference of traveling with your favorite content creators</p>
+            </div>
 
-    <script>
-        // Mobile menu functionality
-        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-        const closeMenuBtn = document.querySelector('.close-menu');
-        const mobileNav = document.querySelector('.mobile-nav');
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <span>🌟</span>
+                    </div>
+                    <h3>Exclusive Access</h3>
+                    <p>Get behind-the-scenes experiences and special events that aren't available to regular tourists.
+                        Our influencers open doors to unique opportunities.</p>
+                </div>
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileNav.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <span>📸</span>
+                    </div>
+                    <h3>Content Creation</h3>
+                    <p>Learn photography and content creation tips directly from successful creators. Return with
+                        stunning photos and videos to enhance your own social presence.</p>
+                </div>
 
-        closeMenuBtn.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-    </script>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <span>👥</span>
+                    </div>
+                    <h3>Like-minded Community</h3>
+                    <p>Connect with fellow travelers who share your interests and passions. Build lasting friendships
+                        with people from around the world.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <span>🛡️</span>
+                    </div>
+                    <h3>Trusted Experiences</h3>
+                    <p>All our trips are personally curated and tested by our influencers. Enjoy peace of mind knowing
+                        every detail has been carefully considered.</p>
+                </div>
+            </div>
+
+            <section class="testimonial-slider-section">
+                <div class="section-heading">
+                    <h2>Happy Travelers</h2>
+                    <p>Hear what our community has to say about their influencer-led adventures</p>
+                </div>
+
+                <div class="testimonial-slider-container">
+                    <div class="testimonial-slider">
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-image">
+                                    <img src="https://images.unsplash.com/photo-1505968409348-bd000797c92e?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGZyZWUlMjBpbWFnZXN8ZW58MHx8MHx8fDA%3D"
+                                        alt="Sarah Johnson">
+                                </div>
+                                <div class="testimonial-content">
+                                    <div class="quote-icon">❝</div>
+                                    <p class="testimonial-text">Traveling with my favorite travel vlogger was a dream
+                                        come true! Not only did I see amazing places, but I learned so much about
+                                        photography and made friends I'll keep for life.</p>
+                                    <div class="testimonial-author">
+                                        <p class="author-name">Sarah Johnson</p>
+                                        <p class="trip-info">Bali Trip with @yogilife</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-image">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBvcnRyYWl0JTIwbWFufGVufDB8fDB8fHww"
+                                        alt="Michael Patel">
+                                </div>
+                                <div class="testimonial-content">
+                                    <div class="quote-icon">❝</div>
+                                    <p class="testimonial-text">The Santorini trip exceeded all my expectations! Sophia
+                                        showed us hidden spots that only locals know about, and the group dynamics made
+                                        everything even more special.</p>
+                                    <div class="testimonial-author">
+                                        <p class="author-name">Michael Patel</p>
+                                        <p class="trip-info">Greece Trip with @sophiatravels</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-image">
+                                    <img src="https://images.unsplash.com/photo-1534751516642-a1af1ef26a56?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHBvcnRyYWl0JTIwd29tYW58ZW58MHx8MHx8fDA%3D"
+                                        alt="Elena Gomez">
+                                </div>
+                                <div class="testimonial-content">
+                                    <div class="quote-icon">❝</div>
+                                    <p class="testimonial-text">As a photography enthusiast, traveling with Jason was an
+                                        incredible learning experience. He taught us techniques that transformed my
+                                        Instagram feed. Worth every penny!</p>
+                                    <div class="testimonial-author">
+                                        <p class="author-name">Elena Gomez</p>
+                                        <p class="trip-info">Japan Trip with @jasonchen</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 4 -->
+                        <div class="testimonial-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-image">
+                                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cG9ydHJhaXQlMjBtYW58ZW58MHx8MHx8fDA%3D"
+                                        alt="Thomas Wright">
+                                </div>
+                                <div class="testimonial-content">
+                                    <div class="quote-icon">❝</div>
+                                    <p class="testimonial-text">The Peru trek with Marcus was challenging but incredibly
+                                        rewarding. His positivity kept us motivated, and the views at Machu Picchu were
+                                        absolutely breathtaking.</p>
+                                    <div class="testimonial-author">
+                                        <p class="author-name">Thomas Wright</p>
+                                        <p class="trip-info">Peru Trip with @marcusadventures</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider-controls">
+                        <button class="prev-btn">❮</button>
+                        <div class="slider-dots"></div>
+                        <button class="next-btn">❯</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    // Mobile menu functionality
+
+    <script src="script.js"></script>
 </body>
 
 </html>
